@@ -6,13 +6,11 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:46:31 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 04:20:36 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/30 00:59:51 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_draw_map_2(t_game *game);
 
 void	ft_draw_map(t_game *game)
 {
@@ -35,29 +33,8 @@ void	ft_draw_map(t_game *game)
 				ft_put_image(game, KEYS, y, x);
 			if (game->map.map_lines[x][y] == MAP_EXIT)
 				ft_put_image(game, MAP_EXIT, y, x);
-			else
-				ft_draw_map_2(game);
-			y++;
-		}
-		x++;
-	}
-}
-
-void	ft_draw_map_2(t_game *game)
-{
-	int	x;
-	int	y;
-
-	x = 0;
-	while (x <= game->map.number_lines)
-	{
-		y = 0;
-		while (y < game->map.columns)
-		{
 			if (game->map.map_lines[x][y] == EXIT_OPEN)
 				ft_put_image(game, EXIT_OPEN, y, x);
-			if (game->map.map_lines[x][y] == SPIKE)
-				ft_put_image(game, SPIKE, y, x);
 			y++;
 		}
 		x++;
@@ -91,8 +68,6 @@ void	ft_put_image(t_game *game, char type, int y, int x)
 	}
 	if (type == EXIT_OPEN)
 		ft_print_image(game, game->door_open.ptr, y, x);
-	if (type == SPIKE)
-		ft_print_image(game, game->spike.ptr, y, x);
 }
 
 void	ft_open_door(t_game *game, int keys)

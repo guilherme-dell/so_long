@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:01:46 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 04:50:26 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/29 16:54:47 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_destroy_images(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->key.ptr);
 	mlx_destroy_image(game->mlx_ptr, game->exit.ptr);
 	mlx_destroy_image(game->mlx_ptr, game->door_open.ptr);
-	mlx_destroy_image(game->mlx_ptr, game->spike.ptr);
 }
 
 void	ft_destroy_all(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:53:22 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 05:15:33 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:12:47 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@
 # define RED 		"\033[1;31m"
 # define GREY 		"\033[0;90m"
 # define RESET 		"\033[0m"
-# define WIN		"\033[05;32m"
-# define LOSE		"\033[05;31m"
 
 // game font colors
 # define YELLOW 	0xF7FF00
@@ -63,7 +61,6 @@
 # define FLOOR		'0'
 # define MAP_EXIT	'E'
 # define EXIT_OPEN	'e'
-# define SPIKE		'S'
 
 // STRUCTS
 typedef struct s_image
@@ -102,7 +99,8 @@ typedef struct s_game
 	t_image		player;
 	t_image		key;
 	t_image		exit;
-	t_image		spike;
+	t_image		player_dead;
+	t_image		enemy;
 	t_image		door_open;
 	t_map		map;
 	int			moves;
@@ -115,38 +113,43 @@ typedef struct s_game
 t_image	ft_new_sprite(void *mlx, char *img_path, t_game *game);
 void	ft_verify_map_extension(int argc, char **argv, t_game *game);
 void	ft_init_map(char	*argv, t_game *game);
-void	ft_init_game(t_game *game);
-void	ft_init_map_args(t_game *game);
-void	ft_init_all(t_game *game, int argc, char **argv);
-void	ft_data_map(t_game *game, char *map_full);
-int		ft_count_lines(char	*map);
-void	ft_check_map_lines(t_game *game);
-void	ft_check_map_wall(t_game *game);
-void	ft_valid_map_parameters(t_game *game);
-void	ft_create_paths(t_game *game);
-void	ft_create_sprites(t_game *game);
-void	ft_destroy_images(t_game *game);
-void	ft_destroy_all(t_game *game);
-void	ft_free_string_array(char **free_me);
-void	ft_move_w(t_game *game);
-void	ft_move_a(t_game *game);
-void	ft_move_s(t_game *game);
-void	ft_move_d(t_game *game);
-void	ft_put_image(t_game *game, char type, int y, int x);
-void	ft_print_moves(t_game *game);
-void	ft_draw_map(t_game *game);
-int		ft_redraw(t_game *game);
-int		ft_handle_input(int keysym, t_game *game);
-void	ft_open_door(t_game *game, int keys);
-void	ft_you_win(void);
-void	ft_you_lose(void);
-int		ft_error_msg(t_game *game, char	*message);
-int		close_game(t_game *game);
-int		handle_no_event(void);
+int		ft_strncmp(const char *s1, const char *s2, size_t len);
 char	*ft_strnstr(const char *str, const char *target, size_t len);
 char	*ft_strchr(const char *str, int c);
 char	*ft_substr(char const *str, unsigned int start, size_t len);
 char	**ft_split(char const *str, char c);
-int		ft_strncmp(const char *s1, const char *s2, size_t len);
+void	ft_printing(t_game *game);
+void	ft_last_location(t_game	*game);
+void	walk_w(t_game *game);
+void	walk_a(t_game *game);
+void	walk_s(t_game *game);
+void	walk_d(t_game *game);
+int		ft_count_lines(char	*map);
+void	ft_check_map_lines(t_game *game);
+void	ft_check_map_wall(t_game *game);
+void	ft_init_game(t_game *game);
+void	ft_valid_map_parameters(t_game *game);
+void	ft_init_map_args(t_game *game);
+void	ft_free_string_array(char **free_me);
+void	ft_draw_map(t_game *game);
+void	ft_create_paths(t_game *game);
+void	ft_create_sprites(t_game *game);
+void	ft_destroy_images(t_game *game);
+void	ft_move_w(t_game *game);
+void	ft_move_a(t_game *game);
+void	ft_move_s(t_game *game);
+void	ft_move_d(t_game *game);
+void	ft_destroy_all(t_game *game);
+void	ft_data_map(t_game *game, char *map_full);
+void	ft_put_image(t_game *game, char type, int y, int x);
+void	ft_init_all(t_game *game, int argc, char **argv);
+void	ft_print_moves(t_game *game);
+char	*ft_itoa(int n);
+int		handle_keypress(int keysym, t_game *game);
+int		handle_no_event(void);
+int		ft_redraw(t_game *game);
+int		close_game(t_game *game);
+int		ft_error_msg(t_game *game, char	*message);
+void	ft_open_door(t_game *game, int keys);
 
 #endif

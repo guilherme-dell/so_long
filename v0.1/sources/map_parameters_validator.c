@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:41:48 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 04:04:31 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/30 00:59:56 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ void	ft_valid_map_parameters(t_game *game)
 			|| game->map.map_lines[x][y] == FLOOR
 			|| game->map.map_lines[x][y] == PLAYER
 			|| game->map.map_lines[x][y] == KEYS
-			|| game->map.map_lines[x][y] == MAP_EXIT
-			|| game->map.map_lines[x][y] == SPIKE)
+			|| game->map.map_lines[x][y] == MAP_EXIT)
 				y++;
 			else
 			{

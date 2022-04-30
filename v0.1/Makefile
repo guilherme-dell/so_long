@@ -52,7 +52,7 @@ fclean:
 re: fclean all
 
 val:
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes ./$(NAME) ./maps/map_1.ber
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --quiet --tool=memcheck --keep-debuginfo=yes ./$(NAME) ./maps/map_2.ber
 run:
 	@./$(NAME) ./maps/map_1.ber
 

@@ -6,37 +6,25 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 06:27:26 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 05:10:26 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/29 21:07:57 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_valide_move(t_game *game, char move)
+int	ft_valide_move(t_game *game, char map)
 {
-	if (move == WALL)
+	if (map == WALL)
 		return (0);
-	else if (move == KEYS)
+	else if (map == KEYS)
 	{
 		game->map.keys = game->map.keys - 1;
 		return (1);
 	}
-	else if (move == EXIT_OPEN)
-	{
-		game->moves++;
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
-		ft_you_win();
+	else if (map == EXIT_OPEN)
 		return (close_game(game));
-	}
-	else if (move == MAP_EXIT && game->map.keys != 0)
+	else if (map == MAP_EXIT && game->map.keys != 0)
 		return (0);
-	else if (move == SPIKE)
-	{
-		game->moves++;
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
-		ft_you_lose();
-		return (close_game(game));
-	}
 	else
 		return (1);
 }

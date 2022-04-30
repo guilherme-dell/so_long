@@ -6,13 +6,13 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 16:54:51 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 03:50:03 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/04/30 01:41:02 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_handle_input(int keysym, t_game *game)
+int	handle_keypress(int keysym, t_game *game)
 {
 	if (keysym == KEY_ESC)
 		close_game(game);
@@ -44,6 +44,7 @@ int	close_game(t_game *game)
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	ft_destroy_all(game);
 	exit(0);
+	return (0);
 }
 
 void	ft_print_moves(t_game *game)
