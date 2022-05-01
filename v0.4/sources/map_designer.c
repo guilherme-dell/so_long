@@ -6,13 +6,13 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:46:31 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 06:21:59 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 22:52:41 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_draw_map_2(t_game *game);
+static void	ft_handle_sprite(t_game *game, int x, int y);
 
 void	ft_draw_map(t_game *game)
 {
@@ -25,43 +25,19 @@ void	ft_draw_map(t_game *game)
 		y = 0;
 		while (y < game->map.columns)
 		{
-			if (game->map.map_lines[x][y] == WALL)
-				ft_put_image(game, WALL, y, x);
-			if (game->map.map_lines[x][y] == FLOOR)
-				ft_put_image(game, FLOOR, y, x);
-			if (game->map.map_lines[x][y] == PLAYER)
-				ft_put_image(game, PLAYER, y, x);
-			if (game->map.map_lines[x][y] == KEYS)
-				ft_put_image(game, KEYS, y, x);
-			if (game->map.map_lines[x][y] == MAP_EXIT)
-				ft_put_image(game, MAP_EXIT, y, x);
-			else
-				ft_draw_map_2(game);
+			ft_handle_sprite(game, x, y);
 			y++;
 		}
 		x++;
 	}
 }
 
-void	ft_draw_map_2(t_game *game)
+static void	ft_handle_sprite(t_game *game, int x, int y)
 {
-	int	x;
-	int	y;
+	char	sprite_code;
 
-	x = 0;
-	while (x <= game->map.number_lines)
-	{
-		y = 0;
-		while (y < game->map.columns)
-		{
-			if (game->map.map_lines[x][y] == EXIT_OPEN)
-				ft_put_image(game, EXIT_OPEN, y, x);
-			if (game->map.map_lines[x][y] == SPIKE)
-				ft_put_image(game, SPIKE, y, x);
-			y++;
-		}
-		x++;
-	}
+	sprite_code = game->map.map_lines[x][y];
+	ft_put_image(game, sprite_code, y, x);
 }
 
 void	ft_print_image(t_game	*game, void *ptr, int y, int x)
