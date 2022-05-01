@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:08:01 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 06:45:43 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 21:52:58 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_create_sprites(t_game *game)
 
 void	ft_data_map(t_game *game, char *map_full)
 {
+	ft_line_empty(game, map_full);
 	game->map.number_lines = ft_count_lines(map_full);
 	game->map.map_lines = ft_split(map_full, '\n');
 	game->map.columns = ft_strlen(game->map.map_lines[0]);

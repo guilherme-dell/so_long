@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 19:24:19 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 05:23:01 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 21:54:15 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,22 @@ void	ft_you_lose(void)
  ░ ░         ░ ░     ░            ░  ░    ░ ░        ░     ░  ░\n\
  ░ ░\n\
 "RESET);
+}
+
+void	ft_line_empty(t_game *game, char *map_full)
+{
+	int	x;
+
+	x = 0;
+	while (map_full[x] != '\0')
+	{
+		if (map_full[x] == '\n' && map_full[x + 1] == '\n')
+		{
+			ft_printf(RED"Error\n"GREY"line empty\n"RESET);
+			free(map_full);
+			free(game);
+			exit(EXIT_FAILURE);
+		}
+		x++;
+	}
 }

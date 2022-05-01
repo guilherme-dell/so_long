@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:41:48 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 04:04:31 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 21:38:07 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	ft_valid_game_parameters(t_game *game)
 {
 	if (game->map.player < 1)
-		ft_error_msg(game, RED"ERROR: "GREY"player not found\n"RESET);
+		ft_error_msg(game, RED"Error\n"GREY"player not found\n"RESET);
 	if (game->map.player > 1)
-		ft_error_msg(game, RED"ERROR: "GREY"more than one player\n"RESET);
+		ft_error_msg(game, RED"Error\n"GREY"more than one player\n"RESET);
 	if (game->map.keys < 1)
-		ft_error_msg(game, RED"ERROR: "GREY"game without collectibles\n"RESET);
+		ft_error_msg(game, RED"Error\n"GREY"game without collectibles\n"RESET);
 	if (game->map.exit < 1)
-		ft_error_msg(game, RED"ERROR: "GREY"game without exit\n"RESET);
+		ft_error_msg(game, RED"Error\n"GREY"game without exit\n"RESET);
 	if (game->map.exit > 1)
-		ft_error_msg(game, RED"ERROR: "GREY"more than one exit\n"RESET);
+		ft_error_msg(game, RED"Error\n"GREY"more than one exit\n"RESET);
 }
 
 void	ft_init_game(t_game *game)
@@ -70,7 +70,7 @@ void	ft_valid_map_parameters(t_game *game)
 				y++;
 			else
 			{
-				ft_error_msg(game, RED"ERROR: "GREY"Invalid parameters map\n"\
+				ft_error_msg(game, RED"Error\n"GREY"Invalid parameters map\n"\
 				RESET);
 				break ;
 			}

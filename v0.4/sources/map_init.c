@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:27:39 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 04:58:54 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 20:43:42 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_close_game_init(t_game *game)
 {
 	free(game);
-	ft_printf(RED"ERROR: "GREY"invalid FD \n"RESET);
+	ft_printf(RED"Error\n"GREY"invalid FD \n"RESET);
 	exit(EXIT_FAILURE);
 }
 
-void	ft_init_map(char	*argv, t_game *game)
+void	ft_init_map(char *argv, t_game *game)
 {
 	char	*map_full;
 	char	*map_line;
