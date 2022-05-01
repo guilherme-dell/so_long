@@ -6,13 +6,13 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:27:39 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 04:28:58 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/01 04:57:12 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_close_init(t_game *game)
+void	ft_close_game_init(t_game *game)
 {
 	free(game);
 	ft_printf(RED"ERROR: "GREY"invalid FD \n"RESET);
