@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parameters_validator.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:41:48 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 21:38:07 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 02:00:21 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_valid_map_parameters(t_game *game)
 				y++;
 			else
 			{
-				ft_error_msg(game, RED"Error\n"GREY"Invalid parameters map\n"\
+				ft_error_msg(game, RED"Error\n"GREY"Invalid character in map\n"\
 				RESET);
 				break ;
 			}

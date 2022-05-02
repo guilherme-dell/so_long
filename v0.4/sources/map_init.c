@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   map_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:27:39 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 20:43:42 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:52:53 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_close_game_init(t_game *game)
+void	ft_close_game_init(char *err_msg, t_game *game)
 {
 	free(game);
-	ft_printf(RED"Error\n"GREY"invalid FD \n"RESET);
+	ft_printf(err_msg);
 	exit(EXIT_FAILURE);
 }
 
@@ -28,7 +28,7 @@ void	ft_init_map(char *argv, t_game *game)
 
 	map_fd = open(argv, O_RDONLY);
 	if (map_fd == -1)
-		ft_close_game_init(game);
+		ft_close_game_init(RED"Error\n"GREY"invalid map name \n"RESET, game);
 	map_full = ft_strdup("");
 	map_line = get_next_line(map_fd);
 	while (map_line)

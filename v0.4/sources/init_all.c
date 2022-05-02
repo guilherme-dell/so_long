@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 16:11:55 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 04:17:44 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:38:31 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	ft_init_all(t_game *game, int argc, char **argv)
 {
 	ft_init_map_args(game);
 	ft_create_paths(game);
-	ft_init_map(argv[1], game);
 	ft_verify_map_extension(argc, argv, game);
+	ft_init_map(argv[1], game);
 	ft_check_map_lines(game);
 	ft_init_game(game);
 	ft_valid_map_parameters(game);

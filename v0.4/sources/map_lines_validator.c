@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_lines_validator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 00:42:23 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 20:35:36 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:54:24 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_check_map_lines(t_game *game)
 	while (i < game->map.number_lines)
 	{
 		if ((int) ft_strlen(game->map.map_lines[i]) != game->map.columns)
-			ft_error_msg(game, RED"Error\n"GREY"map is not be rectangular\n"\
+			ft_error_msg(game, RED"Error\n"GREY"map is not  rectangular\n"\
 			RESET);
 		if ((game->map.map_lines[i][0] != WALL)
 		|| (game->map.map_lines[i][game->map.columns - 1] != WALL))

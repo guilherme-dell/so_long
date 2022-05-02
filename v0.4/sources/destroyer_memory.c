@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroyer_memory.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:01:46 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 06:47:08 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:41:00 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_free_string_array(char **free_me)
 	char	**free_me_too;
 
 	free_me_too = free_me;
-	while (*free_me)
+	while (free_me && *free_me)
 		free(*free_me++);
 	free(free_me_too);
 }

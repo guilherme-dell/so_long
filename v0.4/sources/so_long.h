@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:53:22 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 21:54:19 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 01:49:25 by roaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_substr(char const *str, unsigned int start, size_t len);
 char	**ft_split(char const *str, char c);
 int		ft_strncmp(const char *s1, const char *s2, size_t len);
-void	ft_close_game_init(t_game *game);
+void	ft_close_game_init(char *err_msg, t_game *game);
 void	ft_line_empty(t_game *game, char *map_full);
 
 #endif
