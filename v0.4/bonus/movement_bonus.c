@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movement.c                                         :+:      :+:    :+:   */
+/*   movement_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 06:27:26 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 06:44:41 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 06:29:30 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_valide_move(t_game *game, char move)
 	else if (move == EXIT_OPEN)
 	{
 		game->moves++;
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 		ft_you_win();
 		return (close_game(game));
 	}
@@ -33,7 +33,7 @@ int	ft_valide_move(t_game *game, char move)
 	else if (move == SPIKE)
 	{
 		game->moves++;
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 		ft_you_lose();
 		return (close_game(game));
 	}
@@ -53,7 +53,7 @@ void	ft_move_w(t_game *game)
 		ft_redraw_player(game, "./sprites/move_w.xpm");
 		ft_draw_map(game);
 		ft_print_moves(game);
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 	}
 }
 
@@ -69,7 +69,7 @@ void	ft_move_a(t_game *game)
 		ft_redraw_player(game, "./sprites/move_a.xpm");
 		ft_draw_map(game);
 		ft_print_moves(game);
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 	}
 }
 
@@ -85,7 +85,7 @@ void	ft_move_s(t_game *game)
 		ft_redraw_player(game, "./sprites/move_s.xpm");
 		ft_draw_map(game);
 		ft_print_moves(game);
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 	}
 }
 
@@ -101,6 +101,6 @@ void	ft_move_d(t_game *game)
 		ft_redraw_player(game, "./sprites/move_d.xpm");
 		ft_draw_map(game);
 		ft_print_moves(game);
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
+		ft_printf("Movement count: "GREEN"%d\n"RESET, game->moves);
 	}
 }
