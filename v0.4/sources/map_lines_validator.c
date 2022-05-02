@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 00:42:23 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/02 03:52:22 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 06:16:54 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_check_map_lines(t_game *game)
 	while (i < game->map.number_lines)
 	{
 		if ((int) ft_strlen(game->map.map_lines[i]) != game->map.columns)
-			ft_error_msg(game, RED"Error\n"GREY"map is not  rectangular\n"\
+			ft_error_msg(game, RED"Error\n"GREY"map is not rectangular\n"\
 			RESET);
 		if ((game->map.map_lines[i][0] != WALL)
 		|| (game->map.map_lines[i][game->map.columns - 1] != WALL))
@@ -65,5 +65,9 @@ void	ft_check_map_lines(t_game *game)
 		}
 		i++;
 	}
+	if (((ft_strlen(game->map.map_lines[game->map.number_lines]) \
+		> game->map.columns)))
+		ft_error_msg(game, RED"Error\n"GREY"map is not rectangular\n"\
+			RESET);
 	ft_check_map_columns(game);
 }
