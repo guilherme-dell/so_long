@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 19:24:19 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/02 01:56:07 by roaraujo         ###   ########.fr       */
+/*   Updated: 2022/05/02 04:04:36 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	ft_line_empty(t_game *game, char *map_full)
 	while (map_full[x] != '\0')
 	{
 		if ((map_full[x] == '\n' && map_full[x + 1] == '\n')
-			|| map_full[0] == '\n')
+			|| (map_full[0] == '\n')
+			|| (map_full[ft_strlen(map_full) - 1] == '\n'))
 		{
 			ft_printf(RED"Error\n"GREY"empty line in map\n"RESET);
 			free(map_full);

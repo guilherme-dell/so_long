@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 16:54:51 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 03:50:03 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 04:20:32 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	ft_handle_input(int keysym, t_game *game)
 int	ft_redraw(t_game *game)
 {
 	ft_draw_map(game);
-	ft_print_moves(game);
 	return (0);
 }
 

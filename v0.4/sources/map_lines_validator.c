@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_lines_validator.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roaraujo <roaraujo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 00:42:23 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/02 01:54:24 by roaraujo         ###   ########.fr       */
+/*   Updated: 2022/05/02 03:52:22 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_check_map_columns(t_game *game)
 	int	i;
 
 	i = 0;
-	while (i < game->map.columns - 1)
+	while (i < game->map.columns)
 	{
 		if ((game->map.map_lines[0][i] != WALL)
 		|| (game->map.map_lines[game->map.number_lines][i] != WALL))

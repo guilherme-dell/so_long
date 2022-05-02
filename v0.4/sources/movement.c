@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 06:27:26 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/04/30 06:44:41 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 04:19:50 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,6 @@ int	ft_valide_move(t_game *game, char move)
 	}
 	else if (move == MAP_EXIT && game->map.keys != 0)
 		return (0);
-	else if (move == SPIKE)
-	{
-		game->moves++;
-		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
-		ft_you_lose();
-		return (close_game(game));
-	}
 	else
 		return (1);
 }
@@ -52,7 +45,6 @@ void	ft_move_w(t_game *game)
 		ft_open_door(game, game->map.keys);
 		ft_redraw_player(game, "./sprites/move_w.xpm");
 		ft_draw_map(game);
-		ft_print_moves(game);
 		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
 	}
 }
@@ -68,7 +60,6 @@ void	ft_move_a(t_game *game)
 		ft_open_door(game, game->map.keys);
 		ft_redraw_player(game, "./sprites/move_a.xpm");
 		ft_draw_map(game);
-		ft_print_moves(game);
 		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
 	}
 }
@@ -84,7 +75,6 @@ void	ft_move_s(t_game *game)
 		ft_open_door(game, game->map.keys);
 		ft_redraw_player(game, "./sprites/move_s.xpm");
 		ft_draw_map(game);
-		ft_print_moves(game);
 		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
 	}
 }
@@ -100,7 +90,6 @@ void	ft_move_d(t_game *game)
 		ft_open_door(game, game->map.keys);
 		ft_redraw_player(game, "./sprites/move_d.xpm");
 		ft_draw_map(game);
-		ft_print_moves(game);
 		ft_printf("Movement count:"GREEN"%d\n"RESET, game->moves);
 	}
 }

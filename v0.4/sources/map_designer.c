@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 00:46:31 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 22:52:41 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 04:13:54 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ void	ft_put_image(t_game *game, char type, int y, int x)
 	}
 	if (type == EXIT_OPEN)
 		ft_print_image(game, game->door_open.ptr, y, x);
-	if (type == SPIKE)
-		ft_print_image(game, game->spike.ptr, y, x);
 }
 
 void	ft_open_door(t_game *game, int keys)

@@ -6,7 +6,7 @@
 /*   By: gnuncio- <gnuncio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 20:08:01 by gnuncio-          #+#    #+#             */
-/*   Updated: 2022/05/01 21:52:58 by gnuncio-         ###   ########.fr       */
+/*   Updated: 2022/05/02 04:14:23 by gnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_create_paths(t_game *game)
 	game->key.path = "./sprites/key.xpm";
 	game->exit.path = "./sprites/door_close.xpm";
 	game->door_open.path = "./sprites/door_open.xpm";
-	game->spike.path = "./sprites/spikes.xpm";
 }
 
 void	ft_create_sprites(t_game *game)
@@ -46,7 +45,6 @@ void	ft_create_sprites(t_game *game)
 	game->key = ft_new_sprite(game->mlx_ptr, game->key.path, game);
 	game->exit = ft_new_sprite(game->mlx_ptr, game->exit.path, game);
 	game->door_open = ft_new_sprite(game->mlx_ptr, game->door_open.path, game);
-	game->spike = ft_new_sprite(game->mlx_ptr, game->spike.path, game);
 }
 
 void	ft_data_map(t_game *game, char *map_full)

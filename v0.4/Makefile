@@ -26,6 +26,7 @@ SRC =	sources/destroyer_memory.c				\
 		sources/so_long.c						\
 		sources/utils_1.c						\
 		sources/utils_2.c
+
 SRC_BONUS =	bonus/destroyer_memory_bonus.c			\
 			bonus/error_msg_bonus.c					\
 			bonus/game_events_bonus.c				\
