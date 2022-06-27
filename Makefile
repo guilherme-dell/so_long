@@ -10,7 +10,7 @@ CC = gcc -g3
 FLAGS = -Wall -Wextra -Werror
 MLX_FLAGS = -lmlx -lXext -lX11 -lm
 MAKE_NOPRINT = $(MAKE) --no-print-directory
-INCLUDES = -I ./ -I ./libs/gnl -I ./libs/ft_printf
+INCLUDES = -I ./includes/ -I ./libs/gnl -I ./libs/ft_printf
 
 SRC =	sources/destroyer_memory.c				\
 		sources/error_msg.c						\
@@ -54,11 +54,11 @@ bonus: $(NAME_BONUS)
 $(FT_PRINTF):
 	@$(MAKE_NOPRINT) -C $(PRINTF_PATH)
 
-$(NAME):${FT_PRINTF} so_long.h
+$(NAME):${FT_PRINTF}
 	@$(CC) $(INCLUDES) $(FLAGS) $(SRC) $(SRC_GNL) $(FT_PRINTF) $(MLX_FLAGS) -o $(NAME)
 	@echo "$(GREEN)so_long compiled :) $(RESET)"
 
-$(NAME_BONUS):${FT_PRINTF} so_long.h
+$(NAME_BONUS):${FT_PRINTF} 
 	@$(CC) $(INCLUDES) $(FLAGS) $(SRC_BONUS) $(SRC_GNL) $(FT_PRINTF) $(MLX_FLAGS) -o $(NAME_BONUS)
 	@echo "$(GREEN)so_long_bonus compiled :) $(RESET)"
 
